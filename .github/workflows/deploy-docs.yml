@@ -1,0 +1,39 @@
+name: Deploy mdBook to External Repo
+
+on:
+  push:
+    paths:
+      - 'docs/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout app repo
+      uses: actions/checkout@v3
+
+    - name: Install mdBook
+      run: |
+        curl -sSL https://github.com/rust-lang/mdBook/releases/latest/download/mdbook-v0.4.40-x86_64-unknown-linux-gnu.tar.gz \
+        | tar xz
+        sudo mv mdbook /usr/local/bin
+
+    - name: Build the book
+      run: mdbook build docs
+
+    - name: Deploy to docs repo
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+        git clone --depth=1 https://<GITHUB_TOKEN>@github.com/YOUR-USER/docs.git target-docs
+        rm -rf target-docs/*
+        cp -r docs/book/* target-docs/
+
+        cd target-docs
+        git add .
+        git commit -m "Update from app/docs"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.DOCS_DEPLOY_TOKEN }}
