@@ -30,7 +30,7 @@ jobs:
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-        git clone --depth=1 https://<GITHUB_TOKEN>@github.com/nedden/docs.git target-docs
+        git clone --depth=1 https://x-access-token:${GITHUB_TOKEN}@github.com/nedden/docs.git target-docs
         rm -rf target-docs/*
         cp -r docs/book/* target-docs/
 
