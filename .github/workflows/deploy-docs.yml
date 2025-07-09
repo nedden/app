@@ -15,7 +15,10 @@ jobs:
 
     - name: Install mdBook
       run: |
-        curl -sSL https://github.com/rust-lang/mdBook/releases/latest/download/mdbook-v0.4.40-x86_64-unknown-linux-gnu.tar.gz \
+        curl -sSL https://api.github.com/repos/rust-lang/mdBook/releases/latest \
+        | grep "browser_download_url.*unknown-linux-gnu.tar.gz" \
+        | cut -d '"' -f 4 \
+        | xargs curl -sL \
         | tar xz
         sudo mv mdbook /usr/local/bin
 
@@ -27,7 +30,7 @@ jobs:
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-        git clone --depth=1 https://<GITHUB_TOKEN>@github.com/YOUR-USER/docs.git target-docs
+        git clone --depth=1 https://<GITHUB_TOKEN>@github.com/nedden/docs.git target-docs
         rm -rf target-docs/*
         cp -r docs/book/* target-docs/
 
