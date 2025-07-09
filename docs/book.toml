@@ -1,5 +1,10 @@
+---
+
+## 🧾 `book.toml`
+
+```toml
 [book]
-title = "My App Documentation"
+title = "My App Docs"
 author = "Your Name"
 language = "en"
 multilingual = false
@@ -7,3 +12,4 @@ src = "src"
 
 [output.html]
 default-theme = "light"
+preferred-dark-theme = "navy"

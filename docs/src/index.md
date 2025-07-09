@@ -1,6 +1,12 @@
-# Welcome to My Super App
+# 🚀 Welcome to the Documentation
 
-This is the main documentation site for **My App**.
+This is a demonstration of **mdBook** capabilities.
 
-Use the sidebar to navigate.
+You can:
+- 🔍 Search content (built-in)
+- 📑 Navigate via sidebar
+- 💻 Include code with syntax highlighting
+- 🖼 Embed images
+- 📊 Render tables
 
+👉 Get started with [Features](features.md)
