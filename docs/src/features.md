@@ -1,21 +1,23 @@
 # ✨ Features of mdBook
 
-mdBook supports:
+`mdBook` includes everything you need for technical documentation:
 
-- ✅ Markdown
-- ✅ Syntax highlighting
-- ✅ Offline search
-- ✅ Light/dark themes
-- ✅ Navigation menu
-- ✅ Easy setup
+- ✅ **Markdown-first workflow** — Write using clean, readable Markdown
+- ✅ **Syntax highlighting** — Supports over 150 programming languages
+- ✅ **Offline full-text search** — No server or JavaScript dependencies required
+- ✅ **Light/dark themes** — User-switchable or automatic
+- ✅ **Navigation sidebar** — Structured from your `SUMMARY.md`
+- ✅ **Minimal setup** — No dependencies, just a single binary
 
-> 💡 Ideal for documentation, tutorials, books, and course material.
+> 💡 Perfect for documenting apps, libraries, internal tools, tutorials, and even full books.
 
-## Example Table
+## 📊 Feature Comparison Table
 
-| Feature         | Supported |
-|----------------|-----------|
-| Markdown        | ✅        |
-| Ruby syntax     | ✅        |
-| Image embedding | ✅        |
-| Search          | ✅        |
+| Feature             | Available |
+|---------------------|-----------|
+| Markdown            | ✅        |
+| Ruby syntax         | ✅        |
+| Image embedding     | ✅        |
+| Offline search      | ✅        |
+| Custom themes       | ✅        |
+| Interactive filters | ❌        |
